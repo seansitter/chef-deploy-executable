@@ -1,5 +1,2 @@
-#
-# Cookbook Name:: <%= chef_cookbook_name %>
-# Recipe:: default
-#
-# Copyright (c) 2015 The Authors, All Rights Reserved.
+include_recipe 'executable-deploy::install'
+# your app install dir is now available at: node['app_deploy']['install_dir']
