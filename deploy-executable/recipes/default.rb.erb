@@ -1,2 +1,12 @@
-include_recipe 'executable-deploy::install'
-# your app install dir is now available at: node['app_deploy']['install_dir']
+node.override['app_deploy'] = node['<%= package_attribute_collection_name %>']
+
+# install the package
+include_recipe "supervised_app::install"
+
+# your install path is now: node['install_path']
+# you can expand templates, etc relative to this path
+## my stuff here
+
+
+# start the package
+include_recipe "supervised_app::restart"
