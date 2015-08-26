@@ -2,10 +2,13 @@ node.override['app_deploy'] = node['<%= package_attribute_collection_name %>']
 
 # install the package
 include_recipe "supervised_app::install"
+include_recipe "supervised_app::enable"
 
-# your install path is now: node['install_path']
+# your install path is now: node['app_deploy']['release_path']
 # you can expand templates, etc relative to this path
+#####
 ## my stuff here
+####
 
 
 # start the package
