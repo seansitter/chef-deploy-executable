@@ -1,4 +1,4 @@
-node.override['app_deploy'] = node['<%= package_attribute_collection_name %>']
+node.override['app_deploy'] = <%= package_attribute_collection_var %>
 
 # install the package
 include_recipe "supervised_app::install"
