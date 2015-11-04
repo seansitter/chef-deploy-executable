@@ -10,6 +10,26 @@ include_recipe "supervised_app::enable"
 ## my stuff here
 ####
 
+#template '/var/local/data/<%= dist_name %>/latest/application.yml' do
+#  source 'application.yml.erb'
+#  owner 'app-user'
+#  group 'app-user'
+#  mode '0644'
+#  variables({
+#    'foo' => 'bar'
+#  })
+#end
+
+# uncomment if you want eureka support
+#template '/var/local/data/<%= dist_name %>/latest/application.yml' do
+#  source 'application-eureka.yml.erb'
+#  owner 'app-user'
+#  group 'app-user'
+#  mode '0644'
+#  variables({
+#    'eureka_hosts' => node['eureka']['hosts'].map{|h| h['url']}
+#  })
+#end
 
 # start the package
 include_recipe "supervised_app::restart"

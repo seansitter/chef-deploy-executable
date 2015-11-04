@@ -1,0 +1,13 @@
+---
+spring:
+  profiles: default
+  
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: <%= node['cloud']['local_hostname'] %>
+  client:
+    serviceUrl:
+      defaultZone: <%= @eureka_hosts.join(',') %>
