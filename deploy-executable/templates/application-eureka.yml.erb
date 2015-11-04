@@ -7,7 +7,7 @@ server:
 
 eureka:
   instance:
-    hostname: <%="<%= node['cloud']['local_hostname'] %>"%>
+    hostname: <%<%= node['cloud']['local_hostname'] %>
   client:
     serviceUrl:
-      defaultZone: <%="<%= @eureka_hosts.join(',') %>"%>
+      defaultZone: <%<%= @eureka_hosts.join(',') %>
